@@ -1,0 +1,78 @@
+.header {
+  height: 763px;
+  background: linear-gradient(156.08deg, #3e70a8 -41.22%, #141e30 112.86%);
+  box-shadow: 0px 4px 20px rgba(33, 55, 84, 0.5);
+  &__top {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  &__logo {
+    margin-left: 105px;
+  }
+
+  &__menu {
+    width: 50px;
+    margin-right: 50px;
+
+    img {
+      max-width: 100%;
+      margin-bottom: 25px;
+    }
+    p {
+      font-family: "Work Sans", sans-serif;
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 22px;
+      text-align: justify;
+      color: #ffffff;
+      transform: rotate(90deg);
+    }
+  }
+  &__main {
+    background: url("../../images/buildings.png") center top no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__info {
+    max-width: 660px;
+    margin-left: auto;
+  }
+
+  &__title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 49px;
+    background: linear-gradient(217.6deg, #0081ff 17.62%, #60cbd0 92.67%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #0081ff;
+    margin-bottom: 40px;
+  }
+  &__text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 36px;
+    color: #fff;
+  }
+  &__text--last{
+    margin-bottom: 45px;
+  }
+  &__btn {
+    padding: 7px 54px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 36px;
+    color: #fff;
+    background-color: #70d9ff;
+    border-radius: 5px;
+  }
+}

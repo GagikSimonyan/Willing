@@ -1,0 +1,19 @@
+@mixin flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin d_flex_start {
+    @include flex();
+    flex-direction: row;
+    justify-content: start;
+}
+
+@mixin d_flex_sb {
+    @include flex();
+    flex-direction: row;
+    justify-content: space-between;
+}

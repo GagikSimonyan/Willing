@@ -1,0 +1,22 @@
+@import 'fonts';
+@import "null";
+@import 'variables';
+@import 'partials/header';
+@import 'partials/_app';
+@import 'partials/expertise';
+
+body {
+    font-family: $fontFamily;
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+    flex-direction: column;
+    max-width: 1920px;
+}
+
+
+
