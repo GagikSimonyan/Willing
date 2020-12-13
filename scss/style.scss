@@ -1,22 +1,56 @@
-@import 'fonts';
+@import "mixins";
 @import "null";
-@import 'variables';
-@import 'partials/header';
-@import 'partials/_app';
-@import 'partials/expertise';
+@import "website/header";
+@import "website/app";
+@import "website/expertise";
+@import "website/products";
+@import "website/partners";
+@import "website/newsletter";
+@import "website/footer";
+@import "website/slider";
+@import "website/menu";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-    font-family: $fontFamily;
+  overflow-x: hidden;
+  background-color: #f9f8f8;
 }
 
 .wrapper {
-	width: 100%;
-	min-height: 100%;
-	overflow: hidden;
-	display: flex;
-    flex-direction: column;
-    max-width: 1920px;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 1920px;
 }
 
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
 
+.title {
+  @include noto_font(700);
+  font-size: 42px;
+  line-height: 69px;
+  text-align: center;
+  color: #4f4f4f;
+  position: relative;
 
+  &::after {
+    content: "";
+    width: 75px;
+    height: 5px;
+    background-color: #808285;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}

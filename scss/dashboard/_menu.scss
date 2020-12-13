@@ -1,0 +1,83 @@
+.menu {
+    height: 100%;
+    margin-top: 104px;
+    @include flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__item {
+        position: relative;
+        @include work_font(500);
+        font-size: 18px;
+        line-height: 21px;
+        text-transform: capitalize;
+        padding: 15px 0 15px 49px;
+        svg {
+            width: 20px;
+            margin-right: 18px;
+        }
+        a {
+            @include flex;
+            align-items: center;
+            color: #878787;
+        }
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            width: 3px;
+            height: 100%;
+            background-color: #FFFFFF;
+            box-shadow: 0px 4px 10px rgba(41, 122, 179, 0.3);
+        }
+    }
+    &__item:hover {
+        background: #EFF4FF;
+        box-shadow: 0px 0px 10px rgba(67, 107, 220, 0.35);
+    }
+    &__item:hover::before {
+        content: '';
+    }
+    &__item--active {
+        background: linear-gradient(91.39deg, #4568DC -2.02%, #00B4DB 118.83%);
+        box-shadow: 0px 4px 10px rgba(41, 122, 179, 0.3);
+        border-radius: 0px;
+        &::before {
+            content: '';
+        }
+        svg path {
+            fill: #FFFFFF;
+        }
+        a {
+            color: #FFFFFF;
+        }
+    }
+    &__logout {
+        width: 100%;
+        padding-left: 24px;
+        padding-right: 42px;
+    }
+}
+
+.logout {
+    &__btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background: #37A0EA;
+        color: #FFFFFF;
+        border-radius: 15px;
+        @include work_font(600);
+        font-size: 16px;
+        padding: 16px;
+        svg {
+            height: 20px;
+            width: 20px;
+            margin-right: 17px;
+        }
+        span {
+            padding-left: 20px;
+            border-left: 1px solid #fff;
+        }
+    }
+}

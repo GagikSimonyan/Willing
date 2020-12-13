@@ -1,7 +1,9 @@
 .app {
-  background-color: #f9f8f8;
+  // background-color: #f9f8f8;
   &__block {
     padding-top: 266px;
+    padding-bottom: 197px;
+    display: flex;
   }
   &__info {
     max-width: 758px;
@@ -78,5 +80,27 @@
     }
   }
   &__phone {
+    // max-width: 500px;
+    // height: 720px;
+    position: relative;
+    // border: 1px solid #000;
+  }
+}
+
+.phone {
+  // border: 1px solid #000;
+  &__back {
+    height: 663px;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: 1;
+  }
+  &__front {
+    height: 714px;
+    position: absolute;
+    left: 100px;
+    top: 0;
+    z-index: 2;
   }
 }

@@ -1,0 +1,58 @@
+aside {
+  width: 342px;
+  z-index: 2;
+  padding: 30px 0;
+  @include flex;
+  flex-direction: column;
+  justify-content: start;
+  .logo {
+    margin-left: 53px;
+  }
+}
+
+.user {
+  &__info {
+    @include flex;
+    justify-content: start;
+    margin-top: 80px;
+    margin-right: 44px;
+    padding-left: 42px;
+    img {
+      margin-right: 15px;
+    }
+  }
+}
+
+.info {
+  &__item {
+    width: 100%;
+  }
+  &__name {
+    position: relative;
+    @include work_font(500);
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #ffffff;
+
+    @include flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(55, 160, 234, 0.4);
+    border-radius: 5px;
+    &::after {
+      content: url("../images/dashboardImages/arrow_down.png");
+    }
+  }
+}
+
+.company__name {
+  @include work_font(300);
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: capitalize;
+  color: #e5e5e5;
+  margin-top: 8px;
+}

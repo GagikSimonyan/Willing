@@ -1,3 +1,46 @@
+$maxWidth: 1920;
+$maxWidthContainer: 1500;
+
+// @include adaptiv_value("padding", 50, 20, 0);
+
+// @include adaptiv_font(30, 18);
+
+@mixin adaptiv_value($property, $startSize, $minSize, $type) {
+	$addSize: $startSize - $minSize;
+	@if $type==1 {
+		//Только если меньше контейнера
+		#{$property}: $startSize + px;
+		@media (max-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+		}
+	} @else if $type==2 {
+		//Только если больше контейнера
+		#{$property}: $startSize + px;
+		@media (min-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+		}
+	} @else {
+		//Всегда
+		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+	}
+}
+
+@mixin adaptiv_font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+  @media (max-width: 767px) {
+    font-size: calc(
+      #{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth})
+    );
+  }
+
+  @media (min-width: 767px) {
+    font-size: calc(
+      #{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth})
+    );
+  }
+}
+
 @mixin flex {
   display: -webkit-box;
   display: -moz-box;
@@ -6,14 +49,33 @@
   display: flex;
 }
 
-@mixin d_flex_start {
-    @include flex();
-    flex-direction: row;
-    justify-content: start;
+@mixin inputNum {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 
-@mixin d_flex_sb {
-    @include flex();
-    flex-direction: row;
-    justify-content: space-between;
+@mixin work_font($weight) {
+  font-family: "Work Sans", sans-serif;
+  font-weight: $weight;
+}
+
+@mixin noto_font($weight) {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: $weight;
+}
+
+@mixin open_font($weight) {
+  font-family: "Open Sans", sans-serif;
+  font-weight: $weight;
+}
+
+@mixin mont_font($weight) {
+  font-family: "Montserrat", sans-serif;
+  font-weight: $weight;
 }

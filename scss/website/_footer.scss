@@ -1,0 +1,53 @@
+.footer {
+  background-color: #e5e5e5;
+  &__block {
+    padding: 126px 100px 109px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+  }
+  &__menu {
+    ul li {
+      display: inline-block;
+      padding: 0 30px;
+
+      a {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 30px;
+        color: #3a82c7;
+      }
+    }
+  }
+  &__privacy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    p {
+      font-family: "Noto Sans", sans-serif;
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 30px;
+      color: #4f4f4f;
+      margin-right: 88px;
+    }
+  }
+  &__btn {
+    width: 79px;
+    height: 79px;
+    background-color: #e1dbdb;
+    border-radius: 50%;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

@@ -1,116 +1,84 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans:wght@400;700&family=Open+Sans:wght@300&family=Work+Sans:wght@400;500;600;700&display=swap");
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap");
+/*Обнуление*/
+/*Чтобы очистить все отступы и границы*/
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   padding: 0;
   margin: 0;
+  border: 0;
 }
 
-body {
-  background-color: #e5e5e5;
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  position: relative;
-  background-color: #e5e5e5;
-  z-index: 1;
+/*Убираем линии обводки у некоторых браузеров*/
+:focus, :active {
+  outline: none;
 }
 
-.wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  padding-bottom: 300px;
-  background: -webkit-linear-gradient(358.61deg, #4568dc -2.02%, #00b4db 118.83%);
-  background: -o-linear-gradient(358.61deg, #4568dc -2.02%, #00b4db 118.83%);
-  background: linear-gradient(91.39deg, #4568dc -2.02%, #00b4db 118.83%);
+a:focus, a:active {
+  outline: none;
 }
 
-.main {
-  max-height: 100%;
-  min-height: -webkit-calc(100vh - 90px);
-  min-height: calc(100vh - 90px);
-  background-color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+nav, footer, header, aside {
+  display: block;
 }
 
-.main__dashboard {
-  width: 100%;
+/* Параметры, которые уравнивают поведения шрифтов и элементов для разных браузеров,
+в том числе запрещают самовольное увеличение шрифта на айфонах*/
+html, body {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: column;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
-.main__info {
-  max-width: 422px;
-  margin: 0 auto;
-  text-align: center;
-  border-bottom: 4px solid #1976D2;
-  margin-bottom: 53px;
+/*Просим тегов форм наследовать семейство шрифта, потому что эти теги не наследуют*/
+input, button, textarea {
+  font-family: inherit;
 }
 
-.main__text {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: normal;
-  font-size: 50px;
-  line-height: 59px;
-  color: #575A63;
-  margin-bottom: 12px;
+input::-ms-clear {
+  display: none;
 }
 
-.main__name {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 600;
-  font-size: 50px;
-  line-height: 59px;
-  color: #575A63;
-  margin-bottom: 28px;
+button {
+  cursor: pointer;
 }
 
-.content {
-  z-index: 2;
-  width: -webkit-calc(100% - 370px);
-  width: calc(100% - 370px);
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
 }
 
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+/*Обнуляем все заголовки*/
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
 aside {
   width: 342px;
   z-index: 2;
@@ -121,9 +89,9 @@ aside {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-flow: column;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: start;
   -webkit-justify-content: start;
       -ms-flex-pack: start;
@@ -139,11 +107,6 @@ aside .logo {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-pack: start;
   -webkit-justify-content: start;
       -ms-flex-pack: start;
@@ -212,27 +175,23 @@ aside .logo {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-flow: column;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-.menu ul {
-  list-style: none;
-}
-
 .menu__item {
   position: relative;
-  font-size: 18px;
+  font-family: "Work Sans", sans-serif;
   font-weight: 500;
+  font-size: 18px;
   line-height: 21px;
   text-transform: capitalize;
   padding: 15px 0 15px 49px;
-  font-family: 'Work Sans', sans-serif;
 }
 
 .menu__item svg {
@@ -250,15 +209,14 @@ aside .logo {
       -ms-flex-align: center;
           align-items: center;
   color: #878787;
-  text-decoration: none;
 }
 
 .menu__item::before {
-  top: 0;
-  width: 3px;
-  left: 30px;
-  height: 100%;
   position: absolute;
+  top: 0;
+  left: 30px;
+  width: 3px;
+  height: 100%;
   background-color: #FFFFFF;
   -webkit-box-shadow: 0px 4px 10px rgba(41, 122, 179, 0.3);
           box-shadow: 0px 4px 10px rgba(41, 122, 179, 0.3);
@@ -308,21 +266,18 @@ aside .logo {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #37A0EA;
-  -webkit-border-radius: 15px;
-          border-radius: 15px;
-  color: #FFFFFF;
-  font-family: Work Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  text-decoration: none;
-  padding: 16px;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #37A0EA;
+  color: #FFFFFF;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px;
 }
 
 .logout__btn svg {
@@ -343,11 +298,6 @@ aside .logo {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -355,7 +305,6 @@ aside .logo {
 }
 
 .header__breadcrumb {
-  list-style: none;
   padding-left: 25px;
   -webkit-border-radius: 4px;
           border-radius: 4px;
@@ -363,8 +312,9 @@ aside .logo {
 }
 
 .header__breadcrumb li {
-  display: inline;
+  display: inline-block;
   font-family: "Work Sans", sans-serif;
+  font-weight: 500;
   font-size: 24px;
   line-height: 28px;
   text-transform: capitalize;
@@ -399,4 +349,110 @@ aside .logo {
   position: absolute;
   top: -3px;
   right: 26px;
+}
+
+.main {
+  max-height: 100%;
+  min-height: -webkit-calc(100vh - 90px);
+  min-height: calc(100vh - 90px);
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__dashboard {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__info {
+  max-width: 422px;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 4px solid #1976D2;
+  margin-bottom: 53px;
+}
+
+.main__text {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 59px;
+  color: #575A63;
+  margin-bottom: 12px;
+}
+
+.main__name {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 59px;
+  color: #575A63;
+  margin-bottom: 28px;
+}
+
+body {
+  background-color: #e5e5e5;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 300px;
+  background: -webkit-linear-gradient(358.61deg, #4568dc -2.02%, #00b4db 118.83%);
+  background: -o-linear-gradient(358.61deg, #4568dc -2.02%, #00b4db 118.83%);
+  background: linear-gradient(91.39deg, #4568dc -2.02%, #00b4db 118.83%);
+}
+
+.content {
+  z-index: 2;
+  width: -webkit-calc(100% - 370px);
+  width: calc(100% - 370px);
 }
