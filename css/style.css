@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header__main {
   height: 660px;
-  background-image: url("../../images/buildings.png");
+  background-image: url("../images/buildings.png");
   background-position: 0 0;
   background-repeat: no-repeat;
   -webkit-background-size: auto 100%;
@@ -557,7 +557,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .expertise {
-  background: url("../../images/expertise.png") 0 0 no-repeat;
+  background: url("../images/expertise.png") 0 0 no-repeat;
   -webkit-background-size: cover;
           background-size: cover;
 }
