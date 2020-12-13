@@ -9,6 +9,12 @@ $(document).ready(function () {
     // autoplaySpeed:800,
     responsive: [
       {
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,

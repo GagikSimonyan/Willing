@@ -291,6 +291,10 @@ aside .logo {
   border-left: 1px solid #fff;
 }
 
+.logout__btn img {
+  margin-left: auto;
+}
+
 .header {
   margin-bottom: 28px;
   padding-top: 30px;

@@ -1,32 +1,38 @@
 .products {
-  padding: 100px 0;
+  @include adaptiv_value("padding-top", 100, 50, 0);
+  @include adaptiv_value("padding-bottom", 100, 50, 0);
 
   &__title {
-    padding-bottom: 35px;
-    margin-bottom: 55px;
+    @include adaptiv_value("padding-bottom", 35, 12, 1);
+    @include adaptiv_value("margin-bottom", 55, 22, 1);
   }
 }
 
 .slider {
-  margin: 0 -10.5px;
   position: relative;
   padding: 0 27px;
 
   &__item {
-    padding: 0 10.5px;
+    margin: 0 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 44px 0;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     background-color: #fff;
+    @include adaptiv_value("padding-top", 44, 0, 1);
+    @include adaptiv_value("padding-bottom", 44, 0, 1);
   }
 
   &__img {
     margin: 0 auto;
-    margin-bottom: 60px;
+    @include adaptiv_value("margin-bottom", 60, 30, 1);
+    img {
+      width: 100%;
+      object-fit: contain;
+      @include adaptiv_value("height", 140, 100, 1);
+    }
   }
   &__title {
     font-family: "Work Sans", sans-serif;
@@ -34,28 +40,28 @@
     font-size: 22px;
     line-height: 26px;
     color: #4f4f4f;
-    margin-bottom: 29px;
     text-align: center;
-    
+    @include adaptiv_value("margin-bottom", 29, 14, 1);
   }
   &__text {
     font-family: "Work Sans", sans-serif;
     font-weight: normal;
-    font-size: 20px;
     line-height: 28px;
     text-align: center;
     color: #878787;
-    margin-bottom: 24px;
     flex: 1 1 auto;
-    padding: 0 5px;
+    @include adaptiv_value("font-size", 20, 15, 1);
+    @include adaptiv_value("margin-bottom", 24, 15, 1);
+    @include adaptiv_value("padding-left", 5, 30, 1);
+    @include adaptiv_value("padding-right", 5, 30, 1);
   }
   &__link {
     font-family: "Work Sans", sans-serif;
     font-weight: bold;
-    font-size: 22px;
     line-height: 31px;
     text-align: justify;
     color: #54b4ce;
+    @include adaptiv_value("font-size", 22, 20, 1);
   }
 
   .slick-arrow {
@@ -63,17 +69,17 @@
     top: 50%;
     z-index: 10;
     font-size: 0;
-    width: 22px;
     height: 40px;
     margin-top: -20px;
+    @include adaptiv_value("width", 22, 15, 1);
   }
   .slick-arrow.slick-prev {
-    left: 0;
     background: url("../images/arrow_left.png") 0 0 / 100% no-repeat;
+    @include adaptiv_value("left", 0, 30, 1);
   }
   .slick-arrow.slick-next {
-    right: 0;
     background: url("../images/arrow_right.png") 0 0 / 100% no-repeat;
+    @include adaptiv_value("right", 0, 30, 1);
   }
 }
 .slick-list {
@@ -82,5 +88,4 @@
 
 .slick-track {
   display: flex;
-  //   align-items: flex-start;
 }
