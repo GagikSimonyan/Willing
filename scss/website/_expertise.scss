@@ -6,10 +6,6 @@
     max-width: 966px;
     margin-left: auto;
     background: rgba(28, 117, 188, 0.64);
-    // padding-bottom: 60px;
-    // padding-top: 105px;
-    // padding-left: 60px;
-    // padding-bottom: 60px;
     @include adaptiv_value("padding-left", 60, 20, 0);
     @include adaptiv_value("padding-right", 60, 20, 0);
     @include adaptiv_value("padding-top", 105, 20, 0);
@@ -17,10 +13,8 @@
   }
   &__title {
     @include work_font(700);
-    // font-size: 38px;
     line-height: 45px;
     color: #ffffff;
-    // margin-bottom: 23px;
     @include adaptiv_value("font-size", 38, 28, 0);
     @include adaptiv_value("margin-bottom", 23, 10, 0);
   }
@@ -31,14 +25,10 @@
     text-align: justify;
     color: #ffffff;
     margin-bottom: 41px;
-    // padding-right: 200px;
-
     @include adaptiv_value("font-size", 22, 14, 0);
     @include adaptiv_value("margin-bottom", 41, 30, 0);
     @include adaptiv_value("line-height", 26, 22, 0);
     @include adaptiv_value("padding-right", 200, 20, 0);
-
-    // @include adaptiv_value("padding-left", 60, 20, 0);
 
     span {
       display: block;
@@ -46,7 +36,6 @@
   }
   &__text--line {
     padding-top: 20px;
-    // padding-right: 200px;
     position: relative;
     @include adaptiv_value("padding-right", 200, 20, 0);
 
@@ -69,7 +58,6 @@
     padding: 11px 45px;
     color: #fff;
     @include work_font(400);
-    // font-size: 20px;
     line-height: 23px;
 
     @include adaptiv_value("padding-left", 45, 20, 0);
