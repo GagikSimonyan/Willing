@@ -7,7 +7,6 @@
 @import "website/partners";
 @import "website/newsletter";
 @import "website/footer";
-// @import "website/slider";
 @import "website/menu";
 
 html {
@@ -29,13 +28,13 @@ body {
 }
 
 .container {
-  max-width: 1500px;
+  max-width: 1350px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .title {
   @include noto_font(700);
-  // font-size: 42px;
   line-height: 69px;
   text-align: center;
   color: #4f4f4f;

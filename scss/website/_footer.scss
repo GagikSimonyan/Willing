@@ -2,21 +2,24 @@
   background-color: #e5e5e5;
   &__block {
     padding: 126px 100px 109px;
-    display: flex;
-    flex-direction: row;
+    @include flex;
     justify-content: space-between;
     align-items: center;
   }
+
   &__logo {
+    img {
+      height: 70px;
+    }
   }
+
   &__menu {
     ul li {
       display: inline-block;
       padding: 0 30px;
 
       a {
-        font-family: "Noto Sans", sans-serif;
-        font-weight: normal;
+        @include noto_font(400);
         font-size: 22px;
         line-height: 30px;
         color: #3a82c7;
@@ -24,30 +27,64 @@
     }
   }
   &__privacy {
-    display: flex;
-    flex-direction: row;
+    @include flex;
     align-items: center;
     p {
-      font-family: "Noto Sans", sans-serif;
-      font-weight: normal;
-      font-size: 22px;
+      @include noto_font(400);
+      @include adaptiv_value("font-size", 22, 14, 1);
       line-height: 30px;
       color: #4f4f4f;
       margin-right: 88px;
     }
   }
   &__btn {
-    width: 79px;
-    height: 79px;
     background-color: #e1dbdb;
     border-radius: 50%;
     position: relative;
+    @include adaptiv_value("width", 79, 50, 1);
+    @include adaptiv_value("height", 79, 50, 1);
+
 
     img {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media (max-width: 1336px) {
+  .footer {
+    &__logo {
+      img {
+        height: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .footer {
+
+    &__block {
+      padding: 30px 20px;
+      flex-direction: column;
+    }
+    &__logo {
+      img {
+        height: 50px;
+      }
+    }
+
+    &__menu {
+      ul {
+        margin: 10px 0;
+        li {
+        padding: 0;
+        width: 100%;
+        text-align: center;
+      }}
     }
   }
 }

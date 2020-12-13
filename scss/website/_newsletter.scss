@@ -1,23 +1,18 @@
-@import '../mixins';
-
 .newsletter {
-  &__block {
-    padding-top: 71px;
-    background-color: #1c75bc;
-  }
+
   &__top {
-    max-width: 1460px;
-    margin: 0 auto;
+    background-color: #1c75bc;
+    padding-top: 30px;
   }
+
   &__title {
-    padding-bottom: 35px;
-    margin-bottom: 43px;
-    font-family: "Noto Sans", sans-serif;
-    font-weight: 700;
-    font-size: 55px;
-    line-height: 90px;
+    @include noto_font(700);
     color: #fff;
     position: relative;
+    @include adaptiv_value("font-size", 55, 33, 1);
+    @include adaptiv_value("line-height", 90, 53, 1);
+    @include adaptiv_value("padding-bottom", 35, 15, 1);
+    @include adaptiv_value("margin-bottom", 43, 28, 1);
 
     &::after {
       content: "";
@@ -32,11 +27,12 @@
     }
   }
   &__form {
-    padding-bottom: 75px;
-    display: flex;
+    @include flex;
     justify-content: space-between;
     align-items: center;
     @include inputNum;
+    @include adaptiv_value("padding-bottom", 75, 33, 1);
+
 
     input {
       width: 345px;
@@ -45,7 +41,7 @@
       margin-right: 20px;
 
       &::placeholder {
-        font-family: "Work Sans", sans-serif;
+        @include work_font(400);
         font-size: 16px;
         color: #878787;
       }
@@ -61,15 +57,32 @@
       color: #ffffff;
     }
   }
-  
+
   &__bottom {
     background-color: #70d9ff;
-    color: #fff;
-    font-family: "Work Sans", sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 26px;
-    text-align: center;
-    padding: 26px 0;
+    @include adaptiv_value("padding-top", 26, 10, 1);
+    @include adaptiv_value("padding-bottom", 26, 10, 1);
+    p {
+      @include work_font(400);
+      color: #fff;
+      text-align: center;
+      @include adaptiv_value("font-size", 16, 12, 1);
+      @include adaptiv_value("line-height", 26, 18, 1);
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .newsletter {
+    &__form {
+      flex-flow: column;
+
+      input,
+      button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
   }
 }

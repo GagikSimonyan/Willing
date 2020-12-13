@@ -1,132 +1,141 @@
 .app {
-  // background-color: #f9f8f8;
+  @include adaptiv_value("padding-top", 50, 0, 0);
+  @include adaptiv_value("padding-bottom", 120, 58, 0);
+
   &__block {
-      padding-top: 50px;
-      padding-bottom: 120px;
-      display: flex;
+    @include flex;
+    align-items: center;
   }
   &__info {
-      max-width: 44%;
-      margin-left: 15%;
+    max-width: 44%;
+    margin-left: 15%;
   }
   &__title {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 54px;
-      div {
-          width: 103px;
-          height: 103px;
-          background: #ffffff;
-          box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25);
-          border-radius: 50%;
-          position: relative;
-          margin-right: 23px;
-          img {
-              height: 58px;
-              width: 58px;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-          }
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptiv_value("margin-bottom", 54, 20, 1);
+
+    p {
+      @include work_font(700);
+      color: #4f4f4f;
+      @include adaptiv_value("width", 355, 163, 1);
+      @include adaptiv_value("font-size", 38, 22, 1);
+      @include adaptiv_value("line-height", 45, 33, 1);
+
+      span {
+        font-weight: normal;
       }
-      p {
-          width: 355px;
-          font-family: "Work Sans", sans-serif;
-          font-size: 38px;
-          font-weight: bold;
-          line-height: 45px;
-          color: #4f4f4f;
-          span {
-              font-weight: normal;
-          }
-      }
+    }
+  }
+  &__img {
+    background: #ffffff;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    position: relative;
+    margin-right: 23px;
+    @include adaptiv_value("width", 103, 88, 1);
+    @include adaptiv_value("height", 103, 88, 1);
+
+    img {
+      @include adaptiv_value("width", 58, 45, 1);
+      @include adaptiv_value("height", 58, 45, 1);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
   &__text {
-      font-family: "Work Sans", sans-serif;
-      font-weight: normal;
-      font-size: 20px;
-      line-height: 28px;
-      color: #878787;
-      margin-bottom: 70px;
+    @include work_font(400);
+    color: #878787;
+    @include adaptiv_value("font-size", 20, 15, 1);
+    @include adaptiv_value("line-height", 28, 33, 1);
+    @include adaptiv_value("margin-bottom", 70, 27, 1);
   }
   &__quotes {
-      width: 750px;
-      border-top: 1px solid #808080;
-      border-bottom: 1px solid #808080;
-      padding: 48px 0;
-      p {
-          padding-left: 140px;
-          padding-right: 50px;
-          font-family: "Work Sans", sans-serif;
-          font-weight: normal;
-          font-size: 20px;
-          line-height: 33px;
-          text-align: justify;
-          color: #3c3c3c;
-          position: relative;
-          &::before {
-              content: url("../../images/quotes.png");
-              position: absolute;
-              top: 0;
-              left: 0;
-          }
-      }
+    @include flex;
+    justify-content: start;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+    @include adaptiv_value("padding-top", 48, 32, 1);
+    @include adaptiv_value("padding-bottom", 48, 32, 1);
+    img {
+      width: 50px;
+      height: 50px;
+      margin-right: 16px;
+    }
+    p {
+      @include work_font(400);
+      font-size: 20px;
+      line-height: 33px;
+      text-align: justify;
+      color: #3c3c3c;
+      @include adaptiv_value("font-size", 20, 14, 1);
+      @include adaptiv_value("line-height", 33, 23, 1);
+    }
   }
   &__phone {
-      width: 100%;
-      display: flex;
-      flex-flow: row;
-      position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    position: relative;
   }
 }
 
 .phone {
   &__back {
-      position: relative;
-      .logo {
-          position: absolute;
-          top: 226px;
-          left: 90px;
-      }
+    position: relative;
+    .logo {
+      position: absolute;
+      top: 226px;
+      left: 90px;
+    }
   }
   &__front {
-      position: absolute;
-      left: 150px;
-      top: -20px;
-      z-index: 2;
+    position: absolute;
+    left: 150px;
+    top: -20px;
+    z-index: 2;
   }
   img {
-      width: 100%;
-      object-fit: contain;
+    width: 100%;
+    object-fit: contain;
   }
 }
 
 @media (max-width: 1519.98px) {
   .app {
-      &__info {
-          margin-left: 10%;
-          margin: 0 auto;
-
-      }
-      &__phone {
-          display: none;
-      }
+    padding-top: 50px;
+    &__info {
+      margin-left: 10%;
+      margin: 0 auto;
+    }
+    &__phone {
+      display: none;
+    }
   }
 }
 
 @media (max-width: 1299.98px) {
   .app {
-      &__block {
-          flex-flow: column;
-          padding-top: 100px;
-      }
-      &__info {
-          margin: 0;
-          width: 100%;
-          max-width: unset;
-          padding: 0 20px;
-      }
+    &__block {
+      flex-flow: column;
+    }
+    &__info {
+      margin: 0;
+      width: 100%;
+      max-width: unset;
+      padding: 0 20px;
+    }
+    &__text {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .app {
+    padding-top: 30px;
   }
 }
